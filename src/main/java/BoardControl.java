@@ -158,9 +158,6 @@ public class BoardControl{
             case A_STAR:
                 parent = Solvers.aStar(getCurrentBoard().clone());
                 break;
-            case DFS:
-                parent = Solvers.dfs(getCurrentBoard().clone());
-                break;
         }
         
         time = (System.nanoTime() - time) / 1000000;

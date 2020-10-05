@@ -8,21 +8,20 @@ public class GUI extends javax.swing.JFrame {
     private final JButton tiles[];
 
     public GUI() {
-        super("Jade em Java");
+        super("Jogo do Josenilson");
         initComponents();
-        this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);   //center the frame in the screen on open
         this.setResizable(false);
         this.setAlwaysOnTop(true);
         this.tiles = new JButton[]{Tile_1, Tile_2, Tile_3, Tile_4, Tile_5, Tile_6, Tile_7, Tile_8, Tile_0};
         this.boardControl = new BoardControl();
         
-        // Cria os blocos
+        //Inicializa os quadrados
         for(int i = 0 ; i < tiles.length ; ++i){
             
             tiles[i].setFocusable(false);
             tiles[i].setFont(tiles[i].getFont().deriveFont(25.0f));
             tiles[i].addActionListener(new ActionListener() {
-                
                 int num;
                 ActionListener me(int i){
                     num = i;
@@ -38,7 +37,7 @@ public class GUI extends javax.swing.JFrame {
             }.me(i));
         }
         
-        // Botão de resetar
+        // Bot�o de resetar
         Button_Reset.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -47,7 +46,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         
-        // Botão de randomizar
+        // Embaralhar
         Button_Rand.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -57,69 +56,34 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         
-        // Botão de solucionar
+        // Resolver
         Button_Solve_A.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(GUI.this.boardControl.isSolving()) return;
                 GUI.this.boardControl.solve(GUI.this, Solvers.SOLVE_METHOD.A_STAR);
                 GUI.this.pack();
-                //GUI.this.setLocationRelativeTo(null);
             }
-        });
-        
-        Button_Solve_DFS.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(GUI.this.boardControl.isSolving()) return;
-                GUI.this.boardControl.solve(GUI.this, Solvers.SOLVE_METHOD.DFS);
-                GUI.this.pack();
-                //GUI.this.setLocationRelativeTo(null);
-            }
-        });
-        
-        Button_Speed.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e){
-                if(GUI.this.boardControl.isSolving()) return;
-                String crnt = ((JButton)e.getSource()).getText();
-                switch(crnt){
-                    case "Slow":
-                        GUI.this.boardControl.setTimerSpeed(BoardControl.SPEED.MEDIUM);
-                        GUI.this.Button_Speed.setText("Medium");
-                        break;
-                    case "Medium":
-                        GUI.this.boardControl.setTimerSpeed(BoardControl.SPEED.FAST);
-                        GUI.this.Button_Speed.setText("Fast");
-                        break;
-                    case "Fast":
-                        GUI.this.boardControl.setTimerSpeed(BoardControl.SPEED.SLOW);
-                        GUI.this.Button_Speed.setText("Slow");
-                        break;
-                }
-            }
-            
         });
         
         this.drawBoard();
-        this.pack();                //resize the frame to fit the new size of the buttons
+        this.pack();                
     }
     
-    // desenha os blocos atuais
+    // gera os quadrados
     public final void drawBoard(){
         final byte[] board = boardControl.getCurrentBoard();
         int empty = -1;
         
-        //Texto dos botões
+        // Coloca os numeros nos quadrados
         for(int i = 0 ; i < board.length ; ++i){
             if(board[i] == 0) empty = i;
             else tiles[i].setText(String.valueOf(board[i]));
         }
         
-        // Mostra todos e oculta um botão
+        // Mostra e oculta um
         for(JButton tile : tiles) tile.setVisible(true);
         tiles[empty].setVisible(false);
-
         Main_Middle.repaint();
         Main_Middle.revalidate();
     }
@@ -127,7 +91,7 @@ public class GUI extends javax.swing.JFrame {
     public void setStatus(String stat){
         this.Label_Status.setText(stat);
     }
-
+ 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -136,25 +100,24 @@ public class GUI extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         Main_Right = new javax.swing.JPanel();
         ButtonsPanel = new javax.swing.JPanel();
-        Button_Rand = new JButton();
-        Button_Reset = new JButton();
-        Button_Solve_A = new JButton();
-        Button_Solve_DFS = new JButton();
-        Button_Speed = new JButton();
+        Button_Rand = new javax.swing.JButton();
+        Button_Reset = new javax.swing.JButton();
+        Button_Solve_A = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         Label_Status = new javax.swing.JLabel();
         Main_Middle = new javax.swing.JPanel();
-        Tile_1 = new JButton();
-        Tile_2 = new JButton();
-        Tile_3 = new JButton();
-        Tile_4 = new JButton();
-        Tile_5 = new JButton();
-        Tile_6 = new JButton();
-        Tile_7 = new JButton();
-        Tile_8 = new JButton();
-        Tile_0 = new JButton();
+        Tile_1 = new javax.swing.JButton();
+        Tile_2 = new javax.swing.JButton();
+        Tile_3 = new javax.swing.JButton();
+        Tile_4 = new javax.swing.JButton();
+        Tile_5 = new javax.swing.JButton();
+        Tile_6 = new javax.swing.JButton();
+        Tile_7 = new javax.swing.JButton();
+        Tile_8 = new javax.swing.JButton();
+        Tile_0 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.BorderLayout());
 
         Main_Right.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 10));
         Main_Right.setLayout(new java.awt.BorderLayout());
@@ -163,14 +126,19 @@ public class GUI extends javax.swing.JFrame {
         ButtonsPanel.setLayout(new java.awt.GridBagLayout());
 
         Button_Rand.setFont(new java.awt.Font("Ubuntu", 0, 16)); // NOI18N
-        Button_Rand.setText("Randomize");
+        Button_Rand.setText("Embaralhar");
         Button_Rand.setFocusable(false);
+        Button_Rand.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_RandActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         ButtonsPanel.add(Button_Rand, gridBagConstraints);
 
         Button_Reset.setFont(new java.awt.Font("Ubuntu", 0, 16)); // NOI18N
-        Button_Reset.setText("Reset");
+        Button_Reset.setText("Resetar");
         Button_Reset.setFocusable(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -179,35 +147,13 @@ public class GUI extends javax.swing.JFrame {
         ButtonsPanel.add(Button_Reset, gridBagConstraints);
 
         Button_Solve_A.setFont(new java.awt.Font("Ubuntu", 0, 16)); // NOI18N
-        Button_Solve_A.setText("Solve - A*");
+        Button_Solve_A.setText("Resolver");
         Button_Solve_A.setFocusable(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         ButtonsPanel.add(Button_Solve_A, gridBagConstraints);
-
-        Button_Solve_DFS.setFont(new java.awt.Font("Ubuntu", 0, 16)); // NOI18N
-        Button_Solve_DFS.setText("Solve - DFS");
-        Button_Solve_DFS.setFocusable(false);
-        Button_Solve_DFS.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                Button_Solve_DFSActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        ButtonsPanel.add(Button_Solve_DFS, gridBagConstraints);
-
-        Button_Speed.setText("Slow");
-        Button_Speed.setFocusable(false);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        ButtonsPanel.add(Button_Speed, gridBagConstraints);
 
         Main_Right.add(ButtonsPanel, java.awt.BorderLayout.CENTER);
 
@@ -306,28 +252,28 @@ public class GUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Button_Solve_DFSActionPerformed(ActionEvent evt) {//GEN-FIRST:event_Button_Solve_DFSActionPerformed
+    private void Button_RandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_RandActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Button_Solve_DFSActionPerformed
+    }//GEN-LAST:event_Button_RandActionPerformed
 
-    private JButton Button_Rand;
-    private JButton Button_Reset;
-    private JButton Button_Solve_A;
-    private JButton Button_Solve_DFS;
-    private JButton Button_Speed;
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Button_Rand;
+    private javax.swing.JButton Button_Reset;
+    private javax.swing.JButton Button_Solve_A;
     private javax.swing.JPanel ButtonsPanel;
     private javax.swing.JLabel Label_Status;
     public javax.swing.JPanel Main_Middle;
     private javax.swing.JPanel Main_Right;
-    private JButton Tile_0;
-    private JButton Tile_1;
-    private JButton Tile_2;
-    private JButton Tile_3;
-    private JButton Tile_4;
-    private JButton Tile_5;
-    private JButton Tile_6;
-    private JButton Tile_7;
-    private JButton Tile_8;
+    private javax.swing.JButton Tile_0;
+    private javax.swing.JButton Tile_1;
+    private javax.swing.JButton Tile_2;
+    private javax.swing.JButton Tile_3;
+    private javax.swing.JButton Tile_4;
+    private javax.swing.JButton Tile_5;
+    private javax.swing.JButton Tile_6;
+    private javax.swing.JButton Tile_7;
+    private javax.swing.JButton Tile_8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    // End of variables declaration//GEN-END:variables
 }

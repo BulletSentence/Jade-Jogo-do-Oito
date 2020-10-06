@@ -7,10 +7,8 @@ import java.util.Set;
 
 public class Resolver {
     
-    public static enum SOLVE_METHOD{A_STAR, DFS};
-    private static final Map<String, byte[]> dfs_parent = new HashMap<>();
-    private static final Set<String> dfs_vis = new HashSet<>();
-    
+    public static enum SOLVE_METHOD{A_STAR};
+
     // Conta o numero de nós
     public static long times;
     
@@ -28,11 +26,11 @@ public class Resolver {
         while(!q.isEmpty()){
             Estado crnt = q.poll();
             times++;
-            if(Arrays.equals(crnt.getBoard(), Controle.OBJETIVO)) break;
+            if(Arrays.equals(crnt.getTabela(), Controle.OBJETIVO)) break;
             for(Estado child : crnt.getNextStates()){
-                if(dist.getOrDefault(stringify(child.getBoard()), Integer.MAX_VALUE) > child.getCost()){                    
-                    parent.put(stringify(child.getBoard()), crnt.getBoard());
-                    dist.put(stringify(child.getBoard()), child.getCost());
+                if(dist.getOrDefault(stringify(child.getTabela()), Integer.MAX_VALUE) > child.getCusto()){
+                    parent.put(stringify(child.getTabela()), crnt.getTabela());
+                    dist.put(stringify(child.getTabela()), child.getCusto());
                     q.add(child);
                 }
             }
@@ -41,8 +39,6 @@ public class Resolver {
         return parent;
     }
     
-    //takes a byte array and returns it as a string for the map to hash
-    //never hash arrays in java, they almost always return different hash values
     public static String stringify(byte[] arr){
         String str = "";
         for(int i = 0 ; i < arr.length ; ++i){

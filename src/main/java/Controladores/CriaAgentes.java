@@ -1,3 +1,5 @@
+package Controladores;
+
 import jade.core.*;
 
 public class CriaAgentes extends Agent {

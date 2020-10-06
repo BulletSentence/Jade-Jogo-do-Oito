@@ -1,3 +1,4 @@
+import Controladores.CriaAgentes;
 import jade.core.Agent;
 import jade.core.behaviours.TickerBehaviour;
 import java.util.logging.Level;
@@ -23,32 +24,26 @@ public class Puzzle extends Agent {
 
     GUI g = new GUI();
     protected void setup() {
-
-        addBehaviour(new  TickerBehaviour(this,500) {
+        g.setVisible(false);
+        addBehaviour(new  TickerBehaviour(this,11000) {
             @Override
             protected void onTick() {
                 g.setVisible(true);
             }
-
         });
 
-        jade.Boot.main(new CriaAgentes().getContainerPecas());
-
-        // Agente Embaralhador
+        // -------------------------- CRIA PEÇAS --------------------------------------------
         new java.util.Timer().schedule(
                 new java.util.TimerTask() {
                     @Override
                     public void run() {
-                        jade.Boot.main(new CriaAgentes().getContainerEmbaralhar());
-                        if(g.controleTabela.isResolvendo()) return;
-                        g.controleTabela.randomizeBoard();
-                        g.drawBoard();
+                        jade.Boot.main(new CriaAgentes().getContainerPecas());
                     }
                 },
-                8000
+                10000
         );
 
-        // Resolvedor
+        // ------------------- CRIA AGENTE EMBARALHADOR --------------------------------------
         new java.util.Timer().schedule(
                 new java.util.TimerTask() {
                     @Override
@@ -58,13 +53,34 @@ public class Puzzle extends Agent {
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
+                        jade.Boot.main(new CriaAgentes().getContainerEmbaralhar());
+
+                        if(g.controleTabela.isResolvendo()) return;
+                        g.controleTabela.randomizeBoard();
+                        g.drawBoard();
+                    }
+                },
+                10000
+        );
+
+        // -------------------- CRIA AGENTE RESOLVEDOR ------------------------------------------
+        new java.util.Timer().schedule(
+                new java.util.TimerTask() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(20000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                         jade.Boot.main(new CriaAgentes().getContainerResolver());
+
                         if(g.controleTabela.isResolvendo()) return;
                         g.controleTabela.solve(g, Resolver.RESOLVER_POR.ESTRELA);
                         g.pack();
                     }
                 },
-                6000
+                20000
         );
     }
 }

@@ -34,7 +34,7 @@ public class Estado implements Comparable<Estado>{
 
     public ArrayList<Estado> getNextStates(){
         ArrayList<Estado> estados = new ArrayList<>();
-        for(Controle.MOVES move : Controle.MOVES.values()){
+        for(Controle.MOVIMENTOS move : Controle.MOVIMENTOS.values()){
             byte newBoard[] = this.board.clone();
             Controle.move(newBoard, move);
             if(!Arrays.equals(this.board, newBoard)){

@@ -30,7 +30,7 @@ public class GUI extends javax.swing.JFrame {
                 
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    if(GUI.this.boardControl.isSolving()) return;
+                    if(GUI.this.boardControl.isResolvendo()) return;
                     GUI.this.boardControl.tilePressed(num);
                     GUI.this.drawBoard();
                 }
@@ -43,7 +43,7 @@ public class GUI extends javax.swing.JFrame {
     
     // gera os quadrados
     public final void drawBoard(){
-        final byte[] board = boardControl.getCurrentBoard();
+        final byte[] board = boardControl.getTabelaAtual();
         int empty = -1;
         
         // Coloca os numeros nos quadrados

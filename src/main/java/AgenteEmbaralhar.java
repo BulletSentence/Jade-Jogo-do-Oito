@@ -9,7 +9,7 @@ public class AgenteEmbaralhar extends Agent{
 
             addBehaviour(new OneShotBehaviour() {
                 public void action() {
-                    if(g.boardControl.isSolving()) return;
+                    if(g.boardControl.isResolvendo()) return;
                     g.boardControl.randomizeBoard();
                     g.drawBoard();
                 }

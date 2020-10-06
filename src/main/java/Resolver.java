@@ -28,7 +28,7 @@ public class Resolver {
         while(!q.isEmpty()){
             Estado crnt = q.poll();
             times++;
-            if(Arrays.equals(crnt.getBoard(), Controle.GOAL)) break;
+            if(Arrays.equals(crnt.getBoard(), Controle.OBJETIVO)) break;
             for(Estado child : crnt.getNextStates()){
                 if(dist.getOrDefault(stringify(child.getBoard()), Integer.MAX_VALUE) > child.getCost()){                    
                     parent.put(stringify(child.getBoard()), crnt.getBoard());

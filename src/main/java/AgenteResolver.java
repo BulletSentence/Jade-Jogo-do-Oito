@@ -9,7 +9,7 @@ public class AgenteResolver extends Agent{
 
             addBehaviour(new OneShotBehaviour() {
                 public void action() {
-                    if(g.boardControl.isSolving()) return;
+                    if(g.boardControl.isResolvendo()) return;
                     g.boardControl.solve(g, Resolver.SOLVE_METHOD.A_STAR);
                     g.pack();
                 }

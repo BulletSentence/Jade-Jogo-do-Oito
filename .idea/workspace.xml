@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e908e751-6a9b-400f-92c0-93889862271b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/CriaAgentesPecas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AgenteEmbaralhar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AgenteEmbaralhar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AgenteResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AgenteResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Estado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Estado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Puzzle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Puzzle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Puzzle$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Puzzle$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Puzzle$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Puzzle$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Puzzle$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Puzzle$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Puzzle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Puzzle.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +108,7 @@
       <workItem from="1601930533268" duration="778000" />
       <workItem from="1601931464635" duration="33000" />
       <workItem from="1601934406135" duration="7698000" />
+      <workItem from="1601982673196" duration="2676000" />
     </task>
     <servers />
   </component>
@@ -113,30 +116,30 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="218" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601934507152">
+    <state x="218" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601984647534">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="218" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.768@0.0.1366.768" timestamp="1601934507152" />
+    <state x="218" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.768@0.0.1366.768" timestamp="1601984647534" />
     <state x="443" y="128" key="FileChooserDialogImpl" timestamp="1601934640873">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="443" y="128" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1601934640873" />
-    <state width="1323" height="173" key="GridCell.Tab.0.bottom" timestamp="1601944768152">
+    <state width="1323" height="173" key="GridCell.Tab.0.bottom" timestamp="1601986318217">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="173" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1601944768152" />
-    <state width="1323" height="173" key="GridCell.Tab.0.center" timestamp="1601944768152">
+    <state width="1323" height="173" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1601986318217" />
+    <state width="1323" height="173" key="GridCell.Tab.0.center" timestamp="1601986318216">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="173" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1601944768152" />
-    <state width="1323" height="173" key="GridCell.Tab.0.left" timestamp="1601944768151">
+    <state width="1323" height="173" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1601986318216" />
+    <state width="1323" height="173" key="GridCell.Tab.0.left" timestamp="1601986318216">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="173" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1601944768151" />
-    <state width="1323" height="173" key="GridCell.Tab.0.right" timestamp="1601944768152">
+    <state width="1323" height="173" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1601986318216" />
+    <state width="1323" height="173" key="GridCell.Tab.0.right" timestamp="1601986318217">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="173" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1601944768152" />
+    <state width="1323" height="173" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1601986318217" />
     <state x="179" y="0" key="SettingsEditor" timestamp="1601934650170">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

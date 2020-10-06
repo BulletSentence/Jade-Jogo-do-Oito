@@ -44,7 +44,7 @@ public class Puzzle extends Agent {
                                 "Embaralhador:AgenteEmbaralhar()"};
                         jade.Boot.main(novoContainer);
 
-                        if(g.boardControl.isSolving()) return;
+                        if(g.boardControl.isResolvendo()) return;
                         g.boardControl.randomizeBoard();
                         g.drawBoard();
                     }
@@ -70,7 +70,7 @@ public class Puzzle extends Agent {
                                 "Resolvedor:AgenteResolver()"};
                         jade.Boot.main(novoContainer);
 
-                        if(g.boardControl.isSolving()) return;
+                        if(g.boardControl.isResolvendo()) return;
                         g.boardControl.solve(g, Resolver.SOLVE_METHOD.A_STAR);
                         g.pack();
                     }

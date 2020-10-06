@@ -8,27 +8,27 @@ import javax.swing.Timer;
 
 public class Controle {
     
-    public static enum MOVES{UP, DOWN, RIGHT, LEFT};
-    public static enum SPEED{SLOW, MEDIUM, FAST};
+    public static enum MOVIMENTOS {UP, DOWN, RIGHT, LEFT};
+    public static enum VELOCIDADE {SLOW, MEDIUM, FAST};
     private int timerSpeed = 500;
-    public static final byte[] GOAL = {1, 2, 3, 4, 5, 6, 7, 8, 0};
-    private byte[] current = {1, 2, 3, 4, 5, 6, 7, 8, 0};
-    private boolean solving = false;
-    
-    public boolean isSolving(){
-        return this.solving;
+    public static final byte[] OBJETIVO = {1, 2, 3, 4, 5, 6, 7, 8, 0};
+    private byte[] atualmente = {1, 2, 3, 4, 5, 6, 7, 8, 0};
+    private boolean resolvendo = false;
+
+    public boolean isResolvendo(){
+        return this.resolvendo;
     }
     
-    public byte[] getCurrentBoard(){
-        return current.clone();
+    public byte[] getTabelaAtual(){
+        return atualmente.clone();
     }
     
-    public void setCurrentBoard(byte[] b){
-        this.current = b;
+    public void setTabelaAtual(byte[] b){
+        this.atualmente = b;
     }
     
-    public void setTimerSpeed(SPEED speed){
-        switch(speed){
+    public void setTimerSpeed(VELOCIDADE velocidade){
+        switch(velocidade){
             case SLOW:
                 this.timerSpeed = 700;
                 break;
@@ -44,78 +44,78 @@ public class Controle {
     // Controla as tabelas
     // Verifica a posição do quadrado relativo ao espaço vazio
     public void tilePressed(int btn){
-        int blank = getBlankIndex(current);
-        if(btn == blank-1){
-            move(current, MOVES.LEFT);
-        }else if(btn == blank+1){
-            move(current, MOVES.RIGHT);
-        }else if(btn == blank+3){
-            move(current, MOVES.DOWN);
-        }else if(btn == blank-3){
-            move(current, MOVES.UP);
+        int vazio = getIndexVazio(atualmente);
+        if(btn == vazio-1){
+            move(atualmente, MOVIMENTOS.LEFT);
+        }else if(btn == vazio+1){
+            move(atualmente, MOVIMENTOS.RIGHT);
+        }else if(btn == vazio+3){
+            move(atualmente, MOVIMENTOS.DOWN);
+        }else if(btn == vazio-3){
+            move(atualmente, MOVIMENTOS.UP);
         }
     }
     
     // Realiza um movimento
     // se o movimento for vazio ele não faz nada
-    public static void move(byte[] board, MOVES toMove){
-        int blank = getBlankIndex(board);
-        if(blank == -1) return;
-        switch(toMove){
+    public static void move(byte[] tabela, MOVIMENTOS paraMover){
+        int vazio = getIndexVazio(tabela);
+        if(vazio == -1) return;
+        switch(paraMover){
             case UP:
-                if(blank/3 != 0) swap(board, blank, blank-3);
+                if(vazio/3 != 0) trocar(tabela, vazio, vazio-3);
                 break;
             case DOWN:
-                if(blank/3 != 2) swap(board, blank, blank+3);
+                if(vazio/3 != 2) trocar(tabela, vazio, vazio+3);
                 break;
             case RIGHT:
-                if(blank%3 != 2) swap(board, blank, blank+1);
+                if(vazio%3 != 2) trocar(tabela, vazio, vazio+1);
                 break;
             case LEFT:
-                if(blank%3 != 0) swap(board, blank, blank-1);
+                if(vazio%3 != 0) trocar(tabela, vazio, vazio-1);
                 break;
         }
     }
     
     public boolean isSolved(){
-        return Arrays.equals(this.current, this.GOAL);
+        return Arrays.equals(this.atualmente, this.OBJETIVO);
     }
     
     //reseta o quadro
-    public void resetBoard(){
-        for(int i = 0 ; i < current.length-1 ; ++i) current[i] = (byte)(i+1);
-        current[current.length - 1] = 0;
+    public void resetTabela(){
+        for(int i = 0; i < atualmente.length-1 ; ++i) atualmente[i] = (byte)(i+1);
+        atualmente[atualmente.length - 1] = 0;
     }
     
     // Gera a mesa aleatória mas que seja solucionável
     public void randomizeBoard(){
         byte board[];
-        while(!isSolvable(board = getRandomBoard()));
-        current = board;
+        while(!isResolvivel(board = getTabelaRandomica()));
+        atualmente = board;
     }
     
     // Gera movimentos aleatórios
-    private byte[] getRandomBoard(){
-        boolean f[] = new boolean[current.length];
-        byte board[] = new byte[current.length];
+    private byte[] getTabelaRandomica(){
+        boolean f[] = new boolean[atualmente.length];
+        byte tabela[] = new byte[atualmente.length];
         Random rand = new Random();
 
-        for(int i = 0 ; i < current.length ; ++i){
+        for(int i = 0; i < atualmente.length ; ++i){
             byte t;
             while(f[t = (byte)rand.nextInt(9)]);
             f[t] = true;
-            board[i] = t;
+            tabela[i] = t;
         }
-        return board;
+        return tabela;
     }
     
     // Verifica se é solucionável
-    private boolean isSolvable(byte board[]){
+    private boolean isResolvivel(byte tabela[]){
         int inv = 0;
-        for(int i = 0 ; i < board.length ; ++i){
-            if(board[i] == 0) continue;
-            for(int j = i+1 ; j < board.length ; ++j){
-                if(board[j] != 0 && board[i] > board[j]) ++inv;
+        for(int i = 0 ; i < tabela.length ; ++i){
+            if(tabela[i] == 0) continue;
+            for(int j = i+1 ; j < tabela.length ; ++j){
+                if(tabela[j] != 0 && tabela[i] > tabela[j]) ++inv;
             }
         }
         
@@ -124,78 +124,69 @@ public class Controle {
     }
     
     // Retorna o index do espaço em branco na tabela
-    public static int getBlankIndex(byte[] board){
+    public static int getIndexVazio(byte[] board){
         for(int i = 0 ; i < board.length ; ++i) if(board[i] == 0) return i;
         return -1;
     }
     
     // Troca os elementos de lugar
-    public static void swap(byte[] board, int i, int j){
+    public static void trocar(byte[] tabela, int i, int j){
         try{
-            byte iv = board[i];
-            byte jv = board[j];
-            board[i] = jv;
-            board[j] = iv;
+            byte iv = tabela[i];
+            byte jv = tabela[j];
+            tabela[i] = jv;
+            tabela[j] = iv;
         }catch(ArrayIndexOutOfBoundsException ex){
         }
-    }
-    
-    // Debug
-    public static void print(byte[] b){
-        for(int i = 0 ; i < b.length ; ++i)
-                System.out.print(b[i] + " ");
-            System.out.println("");
     }
     
     public void solve(final GUI gui, Resolver.SOLVE_METHOD method){
         
         Map<String, byte[]> parent = null;
-        
-        this.solving = true;
-        
+        this.resolvendo = true;
         long time = System.nanoTime();
         switch(method){
             case A_STAR:
-                parent = Resolver.aStar(getCurrentBoard().clone());
+                parent = Resolver.aStar(getTabelaAtual().clone());
                 break;
         }
         
         time = (System.nanoTime() - time) / 1000000;
         
         //Uso Backtracking para prever meu próximo movimento
-        Stack<byte[]> nextBoard = new Stack<>();
-        nextBoard.add(GOAL.clone());
-        while(!Arrays.equals(nextBoard.peek(), this.current))
-            nextBoard.add(parent.get(make(nextBoard.peek())));        
-        nextBoard.pop();
-        
-        String status = String.format("<html>%d ms<br/>%d moves<br/>%d expanded nodes</html>", time, nextBoard.size(), Resolver.times);
+        Stack<byte[]> proxTabela = new Stack<>();
+        proxTabela.add(OBJETIVO.clone());
+        while(!Arrays.equals(proxTabela.peek(), this.atualmente))
+            proxTabela.add(parent.get(make(proxTabela.peek())));
+        proxTabela.pop();
+
+        String status = String.format("Quantidade de Movimentos: ", Resolver.times);
         gui.setStatus(status);
         
         // Inicia um timer
         new Timer(this.timerSpeed, new ActionListener(){
-            private Stack<byte[]> boards;
+            private Stack<byte[]> tabela;
             public Controle bc;
             public ActionListener me(Stack<byte[]> stk, Controle _bc){
-                this.boards = stk;
+                this.tabela = stk;
                 this.bc = _bc;
                 return this;
             }
             
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+
                 //se a pilha estiver vazia eu paro o contador
-                if(boards.empty() || isSolved()){
-                    Controle.this.solving = false;
+                if(tabela.empty() || isSolved()){
+                    Controle.this.resolvendo = false;
                     ((Timer)e.getSource()).stop();
                     return;
                 }
 
-                bc.setCurrentBoard(boards.pop());
+                bc.setTabelaAtual(tabela.pop());
                 gui.drawBoard();
             }
-        }.me(nextBoard, this)).start();
+        }.me(proxTabela, this)).start();
     }
 
     private String make(byte[] arr){

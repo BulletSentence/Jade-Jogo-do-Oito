@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.Stack;
 import javax.swing.Timer;
 
-public class BoardControl{
+public class Controle {
     
     public static enum MOVES{UP, DOWN, RIGHT, LEFT};
     public static enum SPEED{SLOW, MEDIUM, FAST};
@@ -147,7 +147,7 @@ public class BoardControl{
             System.out.println("");
     }
     
-    public void solve(final GUI gui, Solvers.SOLVE_METHOD method){
+    public void solve(final GUI gui, Resolver.SOLVE_METHOD method){
         
         Map<String, byte[]> parent = null;
         
@@ -156,7 +156,7 @@ public class BoardControl{
         long time = System.nanoTime();
         switch(method){
             case A_STAR:
-                parent = Solvers.aStar(getCurrentBoard().clone());
+                parent = Resolver.aStar(getCurrentBoard().clone());
                 break;
         }
         
@@ -169,14 +169,14 @@ public class BoardControl{
             nextBoard.add(parent.get(make(nextBoard.peek())));        
         nextBoard.pop();
         
-        String status = String.format("<html>%d ms<br/>%d moves<br/>%d expanded nodes</html>", time, nextBoard.size(), Solvers.times);
+        String status = String.format("<html>%d ms<br/>%d moves<br/>%d expanded nodes</html>", time, nextBoard.size(), Resolver.times);
         gui.setStatus(status);
         
         // Inicia um timer
         new Timer(this.timerSpeed, new ActionListener(){
             private Stack<byte[]> boards;
-            public BoardControl bc;
-            public ActionListener me(Stack<byte[]> stk, BoardControl _bc){
+            public Controle bc;
+            public ActionListener me(Stack<byte[]> stk, Controle _bc){
                 this.boards = stk;
                 this.bc = _bc;
                 return this;
@@ -187,7 +187,7 @@ public class BoardControl{
                 
                 //se a pilha estiver vazia eu paro o contador
                 if(boards.empty() || isSolved()){
-                    BoardControl.this.solving = false;
+                    Controle.this.solving = false;
                     ((Timer)e.getSource()).stop();
                     return;
                 }

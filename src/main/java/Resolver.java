@@ -4,9 +4,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Set;
-import java.util.Stack;
 
-public class Solvers {
+public class Resolver {
     
     public static enum SOLVE_METHOD{A_STAR, DFS};
     private static final Map<String, byte[]> dfs_parent = new HashMap<>();
@@ -17,20 +16,20 @@ public class Solvers {
     
     // Resolve usando o A ESTRELA
     public static Map<String, byte[]> aStar(byte[] current){
-        PriorityQueue<State> q = new PriorityQueue<>();
+        PriorityQueue<Estado> q = new PriorityQueue<>();
         Map<String, Integer> dist = new HashMap<>();
         Map<String, byte[]> parent = new HashMap<>();
         
         times = 0;
 
         dist.put(stringify(current), 0);
-        q.add(new State(current, 0));
+        q.add(new Estado(current, 0));
 
         while(!q.isEmpty()){
-            State crnt = q.poll();
+            Estado crnt = q.poll();
             times++;
-            if(Arrays.equals(crnt.getBoard(), BoardControl.GOAL)) break;            
-            for(State child : crnt.getNextStates()){
+            if(Arrays.equals(crnt.getBoard(), Controle.GOAL)) break;
+            for(Estado child : crnt.getNextStates()){
                 if(dist.getOrDefault(stringify(child.getBoard()), Integer.MAX_VALUE) > child.getCost()){                    
                     parent.put(stringify(child.getBoard()), crnt.getBoard());
                     dist.put(stringify(child.getBoard()), child.getCost());

@@ -4,7 +4,7 @@ import javax.swing.JButton;
 
 public class GUI extends javax.swing.JFrame {
     
-    public final BoardControl boardControl;
+    public final Controle boardControl;
     private final JButton tiles[];
 
     public GUI() {
@@ -14,7 +14,7 @@ public class GUI extends javax.swing.JFrame {
         this.setResizable(false);
         this.setAlwaysOnTop(true);
         this.tiles = new JButton[]{Tile_1, Tile_2, Tile_3, Tile_4, Tile_5, Tile_6, Tile_7, Tile_8, Tile_0};
-        this.boardControl = new BoardControl();
+        this.boardControl = new Controle();
         
         //Inicializa os quadrados
         for(int i = 0 ; i < tiles.length ; ++i){
@@ -37,7 +37,7 @@ public class GUI extends javax.swing.JFrame {
             }.me(i));
         }
         
-        // Botão de resetar
+        // Botï¿½o de resetar
         Button_Reset.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -61,7 +61,7 @@ public class GUI extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(GUI.this.boardControl.isSolving()) return;
-                GUI.this.boardControl.solve(GUI.this, Solvers.SOLVE_METHOD.A_STAR);
+                GUI.this.boardControl.solve(GUI.this, Resolver.SOLVE_METHOD.A_STAR);
                 GUI.this.pack();
             }
         });

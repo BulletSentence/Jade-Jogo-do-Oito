@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class State implements Comparable<State>{
+public class Estado implements Comparable<Estado>{
     
     private final byte board[];
     private final int cost;
     private final int weight;
     
-    public State(byte b[], int _cost){
+    public Estado(byte b[], int _cost){
         this.board = b;
         cost = _cost;
         weight = cost + hurestic();
@@ -32,20 +32,20 @@ public class State implements Comparable<State>{
         return h;
     }
 
-    public ArrayList<State> getNextStates(){
-        ArrayList<State> states = new ArrayList<>();
-        for(BoardControl.MOVES move : BoardControl.MOVES.values()){
+    public ArrayList<Estado> getNextStates(){
+        ArrayList<Estado> estados = new ArrayList<>();
+        for(Controle.MOVES move : Controle.MOVES.values()){
             byte newBoard[] = this.board.clone();
-            BoardControl.move(newBoard, move);
+            Controle.move(newBoard, move);
             if(!Arrays.equals(this.board, newBoard)){
-                states.add(new State(newBoard, this.cost + 1));
+                estados.add(new Estado(newBoard, this.cost + 1));
             }
         }
-        return states;
+        return estados;
     }
 
     @Override
-    public int compareTo(State o) {
+    public int compareTo(Estado o) {
         return this.weight - o.weight;
     }
     

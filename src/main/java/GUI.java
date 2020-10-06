@@ -37,35 +37,6 @@ public class GUI extends javax.swing.JFrame {
             }.me(i));
         }
         
-        // Bot�o de resetar
-        Button_Reset.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                GUI.this.boardControl.resetBoard();
-                GUI.this.drawBoard();
-            }
-        });
-        
-        // Embaralhar
-        Button_Rand.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(GUI.this.boardControl.isSolving()) return;
-                GUI.this.boardControl.randomizeBoard();
-                GUI.this.drawBoard();
-            }
-        });
-        
-        // Resolver
-        Button_Solve_A.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(GUI.this.boardControl.isSolving()) return;
-                GUI.this.boardControl.solve(GUI.this, Resolver.SOLVE_METHOD.A_STAR);
-                GUI.this.pack();
-            }
-        });
-        
         this.drawBoard();
         this.pack();                
     }
@@ -89,7 +60,7 @@ public class GUI extends javax.swing.JFrame {
     }
     
     public void setStatus(String stat){
-        this.Label_Status.setText(stat);
+
     }
  
     @SuppressWarnings("unchecked")
@@ -98,13 +69,6 @@ public class GUI extends javax.swing.JFrame {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
-        Main_Right = new javax.swing.JPanel();
-        ButtonsPanel = new javax.swing.JPanel();
-        Button_Rand = new javax.swing.JButton();
-        Button_Reset = new javax.swing.JButton();
-        Button_Solve_A = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        Label_Status = new javax.swing.JLabel();
         Main_Middle = new javax.swing.JPanel();
         Tile_1 = new javax.swing.JButton();
         Tile_2 = new javax.swing.JButton();
@@ -117,53 +81,6 @@ public class GUI extends javax.swing.JFrame {
         Tile_0 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.BorderLayout());
-
-        Main_Right.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 10));
-        Main_Right.setLayout(new java.awt.BorderLayout());
-
-        ButtonsPanel.setOpaque(false);
-        ButtonsPanel.setLayout(new java.awt.GridBagLayout());
-
-        Button_Rand.setFont(new java.awt.Font("Ubuntu", 0, 16)); // NOI18N
-        Button_Rand.setText("Embaralhar");
-        Button_Rand.setFocusable(false);
-        Button_Rand.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button_RandActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        ButtonsPanel.add(Button_Rand, gridBagConstraints);
-
-        Button_Reset.setFont(new java.awt.Font("Ubuntu", 0, 16)); // NOI18N
-        Button_Reset.setText("Resetar");
-        Button_Reset.setFocusable(false);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        ButtonsPanel.add(Button_Reset, gridBagConstraints);
-
-        Button_Solve_A.setFont(new java.awt.Font("Ubuntu", 0, 16)); // NOI18N
-        Button_Solve_A.setText("Resolver");
-        Button_Solve_A.setFocusable(false);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        ButtonsPanel.add(Button_Solve_A, gridBagConstraints);
-
-        Main_Right.add(ButtonsPanel, java.awt.BorderLayout.CENTER);
-
-        jPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 1, 1, 1));
-        jPanel2.setOpaque(false);
-        jPanel2.add(Label_Status);
-
-        Main_Right.add(jPanel2, java.awt.BorderLayout.PAGE_START);
-
-        getContentPane().add(Main_Right, java.awt.BorderLayout.LINE_END);
 
         Main_Middle.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         Main_Middle.setLayout(new java.awt.GridBagLayout());
@@ -252,18 +169,8 @@ public class GUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Button_RandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_RandActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Button_RandActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Button_Rand;
-    private javax.swing.JButton Button_Reset;
-    private javax.swing.JButton Button_Solve_A;
-    private javax.swing.JPanel ButtonsPanel;
-    private javax.swing.JLabel Label_Status;
     public javax.swing.JPanel Main_Middle;
-    private javax.swing.JPanel Main_Right;
     private javax.swing.JButton Tile_0;
     private javax.swing.JButton Tile_1;
     private javax.swing.JButton Tile_2;
@@ -274,6 +181,5 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton Tile_7;
     private javax.swing.JButton Tile_8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

@@ -2,35 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e908e751-6a9b-400f-92c0-93889862271b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_codec_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/AgenteEmbaralhar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/AgenteResolver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/bibilhotecas/commons-codec-1.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/bibilhotecas/jade.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BoardControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Puzzle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Puzzle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Solvers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Resolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Estado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/.netbeans_automatic_build" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BoardControl$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BoardControl$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BoardControl$MOVES.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BoardControl$SPEED.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BoardControl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AgenteEmbaralhar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AgenteEmbaralhar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AgenteResolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AgenteResolver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controle$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controle$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controle$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controle$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controle$MOVES.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controle$MOVES.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controle$SPEED.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controle$SPEED.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Estado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Estado.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/GUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI$5.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Puzzle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Puzzle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Solvers$SOLVE_METHOD.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Solvers.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/State.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/.netbeans_automatic_build" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Resolver$SOLVE_METHOD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Resolver$SOLVE_METHOD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Resolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Resolver.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,22 +134,22 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="443" y="128" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1601934640873" />
-    <state width="1323" height="172" key="GridCell.Tab.0.bottom" timestamp="1601942396203">
+    <state width="1323" height="543" key="GridCell.Tab.0.bottom" timestamp="1601944041818">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="172" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1601942396203" />
-    <state width="1323" height="172" key="GridCell.Tab.0.center" timestamp="1601942396202">
+    <state width="1323" height="543" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1601944041818" />
+    <state width="1323" height="543" key="GridCell.Tab.0.center" timestamp="1601944041817">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="172" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1601942396202" />
-    <state width="1323" height="172" key="GridCell.Tab.0.left" timestamp="1601942396202">
+    <state width="1323" height="543" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1601944041817" />
+    <state width="1323" height="543" key="GridCell.Tab.0.left" timestamp="1601944041817">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="172" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1601942396202" />
-    <state width="1323" height="172" key="GridCell.Tab.0.right" timestamp="1601942396202">
+    <state width="1323" height="543" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1601944041817" />
+    <state width="1323" height="543" key="GridCell.Tab.0.right" timestamp="1601944041817">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="172" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1601942396202" />
+    <state width="1323" height="543" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1601944041817" />
     <state x="179" y="0" key="SettingsEditor" timestamp="1601934650170">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

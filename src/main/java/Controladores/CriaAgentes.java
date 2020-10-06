@@ -7,14 +7,14 @@ public class CriaAgentes extends Agent {
     String[] containerPecas = {
         "-local-host", "127.0.0.1", "-container",
             "-container-name", "Pecas",
-            "A:Pecas.AgenteA();" +
-            "B:Pecas.AgenteB();" +
-            "C:Pecas.AgenteC();" +
-            "D:Pecas.AgenteD();" +
-            "E:Pecas.AgenteE();" +
-            "F:Pecas.AgenteF();" +
-            "G:Pecas.AgenteG();" +
-            "H:Pecas.AgenteH();",
+            "A:PecaAgenteA();" +
+            "B:PecaAgenteB();" +
+            "C:PecaAgenteC();" +
+            "D:PecaAgenteD();" +
+            "E:PecaAgenteE();" +
+            "F:PecaAgenteF();" +
+            "G:PecaAgenteG();" +
+            "H:PecaAgenteH();",
     };
 
     String[] containerEmbaralhar = {

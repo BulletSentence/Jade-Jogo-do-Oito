@@ -3,13 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="e908e751-6a9b-400f-92c0-93889862271b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CriaAgentes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controladores/CriaAgentes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Puzzle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Puzzle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CriaAgentes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Puzzle$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Puzzle$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Puzzle$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Puzzle$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Puzzle$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Puzzle$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Puzzle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Puzzle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controladores/CriaAgentes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controladores/CriaAgentes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pecas/AgenteA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PecaAgenteA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pecas/AgenteB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PecaAgenteB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pecas/AgenteC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PecaAgenteC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pecas/AgenteD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PecaAgenteD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pecas/AgenteE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PecaAgenteE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pecas/AgenteF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PecaAgenteF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pecas/AgenteG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PecaAgenteG.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pecas/AgenteH.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PecaAgenteH.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controladores/CriaAgentes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controladores/CriaAgentes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Pecas/AgenteA.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Pecas/AgenteB.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Pecas/AgenteC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Pecas/AgenteD.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Pecas/AgenteE.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Pecas/AgenteF.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Pecas/AgenteG.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Pecas/AgenteH.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +70,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Pecas" />
       <recent name="" />
@@ -117,6 +131,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="479" y="227" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1601993672895">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="479" y="227" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.768@0.0.1366.768" timestamp="1601993672895" />
     <state x="218" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601984647534">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -125,22 +143,22 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="443" y="128" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1601934640873" />
-    <state width="1323" height="173" key="GridCell.Tab.0.bottom" timestamp="1601991730073">
+    <state width="1323" height="429" key="GridCell.Tab.0.bottom" timestamp="1601994018338">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="173" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1601991730073" />
-    <state width="1323" height="173" key="GridCell.Tab.0.center" timestamp="1601991730073">
+    <state width="1323" height="429" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1601994018338" />
+    <state width="1323" height="429" key="GridCell.Tab.0.center" timestamp="1601994018338">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="173" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1601991730073" />
-    <state width="1323" height="173" key="GridCell.Tab.0.left" timestamp="1601991730073">
+    <state width="1323" height="429" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1601994018338" />
+    <state width="1323" height="429" key="GridCell.Tab.0.left" timestamp="1601994018338">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="173" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1601991730073" />
-    <state width="1323" height="173" key="GridCell.Tab.0.right" timestamp="1601991730073">
+    <state width="1323" height="429" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1601994018338" />
+    <state width="1323" height="429" key="GridCell.Tab.0.right" timestamp="1601994018338">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="173" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1601991730073" />
+    <state width="1323" height="429" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1601994018338" />
     <state x="179" y="0" key="SettingsEditor" timestamp="1601934650170">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

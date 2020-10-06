@@ -4,7 +4,7 @@ import javax.swing.JButton;
 
 public class GUI extends javax.swing.JFrame {
     
-    public final Controle boardControl;
+    public final Controle controleTabela;
     private final JButton tiles[];
 
     public GUI() {
@@ -14,7 +14,7 @@ public class GUI extends javax.swing.JFrame {
         this.setResizable(false);
         this.setAlwaysOnTop(true);
         this.tiles = new JButton[]{Tile_1, Tile_2, Tile_3, Tile_4, Tile_5, Tile_6, Tile_7, Tile_8, Tile_0};
-        this.boardControl = new Controle();
+        this.controleTabela = new Controle();
         
         //Inicializa os quadrados
         for(int i = 0 ; i < tiles.length ; ++i){
@@ -30,8 +30,8 @@ public class GUI extends javax.swing.JFrame {
                 
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    if(GUI.this.boardControl.isResolvendo()) return;
-                    GUI.this.boardControl.tilePressed(num);
+                    if(GUI.this.controleTabela.isResolvendo()) return;
+                    GUI.this.controleTabela.tilePressed(num);
                     GUI.this.drawBoard();
                 }
             }.me(i));
@@ -40,35 +40,31 @@ public class GUI extends javax.swing.JFrame {
         this.drawBoard();
         this.pack();                
     }
-    
+
     // gera os quadrados
     public final void drawBoard(){
-        final byte[] board = boardControl.getTabelaAtual();
-        int empty = -1;
-        
+        final byte[] tabela = controleTabela.getTabelaAtual();
+        int vazio = -1;
+
         // Coloca os numeros nos quadrados
-        for(int i = 0 ; i < board.length ; ++i){
-            if(board[i] == 0) empty = i;
-            else tiles[i].setText(String.valueOf(board[i]));
+        for(int i = 0 ; i < tabela.length ; ++i){
+            if(tabela[i] == 0) vazio = i;
+            else tiles[i].setText(String.valueOf(tabela[i]));
         }
-        
+
         // Mostra e oculta um
         for(JButton tile : tiles) tile.setVisible(true);
-        tiles[empty].setVisible(false);
+        tiles[vazio].setVisible(false);
         Main_Middle.repaint();
         Main_Middle.revalidate();
     }
-    
-    public void setStatus(String stat){
 
-    }
  
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        jPanel1 = new javax.swing.JPanel();
         Main_Middle = new javax.swing.JPanel();
         Tile_1 = new javax.swing.JButton();
         Tile_2 = new javax.swing.JButton();
@@ -180,6 +176,5 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton Tile_6;
     private javax.swing.JButton Tile_7;
     private javax.swing.JButton Tile_8;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

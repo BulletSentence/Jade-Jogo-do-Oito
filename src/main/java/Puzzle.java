@@ -32,20 +32,16 @@ public class Puzzle extends Agent {
 
         });
 
-        // Agente Embaralhador
+        jade.Boot.main(new CriaAgentes().getContainerPecas());
 
+        // Agente Embaralhador
         new java.util.Timer().schedule(
                 new java.util.TimerTask() {
                     @Override
                     public void run() {
-                        String[] novoContainer = {
-                                "-local-host", "127.0.0.1", "-container",
-                                "-container-name", "Container-Embaralhar",
-                                "Embaralhador:AgenteEmbaralhar()"};
-                        jade.Boot.main(novoContainer);
-
-                        if(g.boardControl.isResolvendo()) return;
-                        g.boardControl.randomizeBoard();
+                        jade.Boot.main(new CriaAgentes().getContainerEmbaralhar());
+                        if(g.controleTabela.isResolvendo()) return;
+                        g.controleTabela.randomizeBoard();
                         g.drawBoard();
                     }
                 },
@@ -53,7 +49,6 @@ public class Puzzle extends Agent {
         );
 
         // Resolvedor
-
         new java.util.Timer().schedule(
                 new java.util.TimerTask() {
                     @Override
@@ -63,15 +58,9 @@ public class Puzzle extends Agent {
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
-
-                        String[] novoContainer = {
-                                "-local-host", "127.0.0.1", "-container",
-                                "-container-name", "Container-Resolver",
-                                "Resolvedor:AgenteResolver()"};
-                        jade.Boot.main(novoContainer);
-
-                        if(g.boardControl.isResolvendo()) return;
-                        g.boardControl.solve(g, Resolver.SOLVE_METHOD.A_STAR);
+                        jade.Boot.main(new CriaAgentes().getContainerResolver());
+                        if(g.controleTabela.isResolvendo()) return;
+                        g.controleTabela.solve(g, Resolver.RESOLVER_POR.ESTRELA);
                         g.pack();
                     }
                 },

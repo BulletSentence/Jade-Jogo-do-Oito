@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class Resolver {
     
-    public static enum SOLVE_METHOD{A_STAR};
+    public static enum RESOLVER_POR {ESTRELA};
 
     // Conta o numero de nós
     public static long times;
@@ -38,7 +38,7 @@ public class Resolver {
         
         return parent;
     }
-    
+
     public static String stringify(byte[] arr){
         String str = "";
         for(int i = 0 ; i < arr.length ; ++i){

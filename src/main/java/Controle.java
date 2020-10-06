@@ -140,13 +140,13 @@ public class Controle {
         }
     }
     
-    public void solve(final GUI gui, Resolver.SOLVE_METHOD method){
+    public void solve(final GUI gui, Resolver.RESOLVER_POR method){
         
         Map<String, byte[]> parent = null;
         this.resolvendo = true;
         long time = System.nanoTime();
         switch(method){
-            case A_STAR:
+            case ESTRELA:
                 parent = Resolver.aStar(getTabelaAtual().clone());
                 break;
         }
@@ -159,9 +159,6 @@ public class Controle {
         while(!Arrays.equals(proxTabela.peek(), this.atualmente))
             proxTabela.add(parent.get(make(proxTabela.peek())));
         proxTabela.pop();
-
-        String status = String.format("Quantidade de Movimentos: ", Resolver.times);
-        gui.setStatus(status);
         
         // Inicia um timer
         new Timer(this.timerSpeed, new ActionListener(){

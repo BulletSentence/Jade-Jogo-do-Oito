@@ -17,7 +17,7 @@ public class Puzzle extends Agent {
                 "-gui",
                 "-local-host",
                 "127.0.0.1",
-                "Jogo:Puzzle()"
+                "Jogo:Puzzle();"
         };
         jade.Boot.main(par);
     }

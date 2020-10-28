@@ -19,4 +19,6 @@
 - Agentes de Controle
   * Embaralhador
   * Resolvedor
+  
+  Ok!
  
